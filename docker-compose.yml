@@ -1,0 +1,27 @@
+services:
+  api_gateway:
+    build: ./api-gateway
+    ports:
+      - "3000:3000" #exposing the port
+    volumes:
+      - ./api-gateway/src:/usr/src/app/src #mounting
+    command: npm run start:dev
+    environment:
+      - PORT=3000
+
+  user-microservice:
+    build: ./user-microservice
+    volumes:
+      - ./user-microservice/src:/usr/src/app/src #mounting
+    command: npm run start:dev
+
+  payment-microservice:
+    build: ./payment-microservice
+    volumes:
+      - ./payment-microservice/src:/usr/src/app/src #mounting
+    command: npm run start:dev
+
+  nats:
+    image: nats 
+    ports:
+      - "4222:4222"
