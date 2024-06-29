@@ -8,7 +8,7 @@ export class UsersMicroServiceController {
     @MessagePattern({cmd:'create'})
     createUser(@Payload() payload_createuser : CreateUserDTO){
         // console.log(payload_createuser)
-        return {msg:"successfully Updated"}
+        return {msg:"Successfully Updated"}
     }
     
     
