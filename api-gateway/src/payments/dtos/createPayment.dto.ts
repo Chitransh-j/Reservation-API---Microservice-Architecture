@@ -5,5 +5,8 @@ export class CreatePaymentDTO{
     @IsNumber()
     @IsNotEmpty()
     amount:number
+
+    @IsNotEmpty()
+    userid: string;
 }
 

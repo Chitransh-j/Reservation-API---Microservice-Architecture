@@ -1,4 +1,4 @@
 export class CreatePaymentDTO{
-    amount:number
+    amount:number;
+    userid:string;
 }
-
